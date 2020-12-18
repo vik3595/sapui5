@@ -1,0 +1,31 @@
+sap.ui.define([
+	"sap/ui/core/mvc/Controller"
+], function (Controller) {
+	"use strict";
+
+	return Controller.extend("sap.com.LoginPage.controller.Main", {
+		onInit: function () {
+			var oModel = new sap.ui.model.json.JSONModel();
+			this.getOwnerComponent().setModel(oModel, "viewModel");
+			this.getOwnerComponent().getModel("viewModel").setProperty("/procType", "SignIn");
+		},
+		onSignUpLoginPress: function () {
+			var oVbox1 = this.getView().byId("idVbox1"),
+				oVbox2 = this.getView().byId("idVbox2");
+			if (this.getOwnerComponent().getModel("viewModel").getProperty("/procType") === "SignIn") {
+				oVbox1.removeStyleClass("vbox1LeftMoveAnimation");
+				oVbox2.removeStyleClass("vbox2RighMoveAnimation");
+				oVbox1.addStyleClass("vbox1RightMoveAnimation");
+				oVbox2.addStyleClass("vbox2LeftMoveAnimation");
+				this.getOwnerComponent().getModel("viewModel").setProperty("/procType", "SignUp");
+			} else {
+				oVbox1.removeStyleClass("vbox1RightMoveAnimation");
+				oVbox2.removeStyleClass("vbox2LeftMoveAnimation");
+				oVbox1.addStyleClass("vbox1LeftMoveAnimation");
+				oVbox2.addStyleClass("vbox2RighMoveAnimation");
+				this.getOwnerComponent().getModel("viewModel").setProperty("/procType", "SignIn");
+			}
+
+		}
+	});
+});
