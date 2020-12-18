@@ -1,0 +1,115 @@
+/* Enter your custom styles here */
+.pgBckClass{
+	background: url('/webapp/img/pagebg.jpeg');
+}
+.vbox1{
+	background: url('/webapp/img/bg1.jpg');
+}
+.vbox2{
+	background: #ffffff;
+}
+.mainHbox{
+	background: #ffffff;
+	box-shadow: 0px 1px 6px 2px #666;
+}
+.titleLogSignTxt{
+	font-size: 1.8rem;
+    color: #3c8a3c;
+    text-shadow: none;
+    font-weight: bold;
+}
+.titleTxt{
+	font-size: 2.2rem;
+    color: #ffffff;
+    text-shadow: none;
+}
+.txtClassSign{
+	font-size: 0.85rem;
+    color: #333;
+    text-shadow: none;
+}
+.titleSubTxt{
+	text-align: center !important;
+    font-size: 0.95rem;
+    color: #eff4f9;
+    text-shadow: none;
+}
+.btnClass .sapMBtnInner.sapMBtnText {
+	outline: none !important;
+    color: #ffffff;
+    text-shadow: none;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+}
+.frgtBtnCls .sapMBtnInner.sapMBtnText {
+	outline: none !important;
+    background: #ffffff;
+    color: #000000;
+    text-shadow: none;
+    box-shadow: 1px 2px 0px 0px #aca2a2;
+    border-radius: 1rem;
+    border: 0.5px solid #ddd;
+}
+.logSignBtnCls .sapMBtnInner.sapMBtnText {
+	outline: none !important;
+    background: url('/webapp/img/btnbg.png');
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: none;
+    border-radius: 1rem;
+}
+
+@keyframes moveVbox1ToRight {
+    from {
+        left: 0rem;
+    }
+    to {
+        left: 30rem;
+    }
+}
+@keyframes moveVbox2ToLeft {
+    from {
+        right: 0rem;
+    }
+    to {
+        right: 20rem;
+    }
+}
+
+@keyframes moveVbox1ToLeft {
+    from {
+        right: -30rem;
+    }
+    to {
+        right: 0rem;
+    }
+}
+@keyframes moveVbox2ToRight {
+    from {
+        left: -20rem;
+    }
+    to {
+        left: 0rem;
+    }
+}
+.vbox1RightMoveAnimation {
+    animation-name: moveVbox1ToRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.vbox2LeftMoveAnimation {
+    animation-name: moveVbox2ToLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.vbox1LeftMoveAnimation {
+    animation-name: moveVbox1ToLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.vbox2RighMoveAnimation {
+    animation-name: moveVbox2ToRight;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
