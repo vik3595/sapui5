@@ -1,0 +1,31 @@
+<Page id="page" title="{i18n>title}" showHeader="false" class="pgBckClass">
+				<content>
+					<FlexBox justifyContent="Center" alignContent="Center" alignItems="Center" fitContainer="true">
+						<HBox class="mainHbox">
+							<VBox id="idVbox1" width="20rem" height="460px" alignItems="Center" justifyContent="Center" class="vbox1">
+								<Title class="titleTxt" text="{= ${viewModel>/procType} === 'SignIn' ? 'Hello, Friend' : 'Welcome, Back'}" wrapping="true" level="H1"/>
+								<Title class="titleSubTxt sapUiSmallMarginTop sapUiSmallMarginBeginEnd" wrapping="true"
+									text="{= ${viewModel>/procType} === 'SignIn' ? 'We are happy to see you again, please login to start' : 'Explore the opportunities out there by joining us at LinkItUp'}"/>
+								<Button text="{= ${viewModel>/procType} === 'SignIn' ? 'New Member? Sign Up' : 'Already Member? Sign In'}" press="onSignUpLoginPress"
+									class="sapUiMediumMarginTop btnClass" type="Transparent"/>
+							</VBox>
+							<VBox id="idVbox2" width="30rem" height="460px" alignItems="Center" justifyContent="Center" class="vbox2">
+								<Title class="titleLogSignTxt" text="{= ${viewModel>/procType} === 'SignIn' ? 'Sign in to LinkItUp' : 'Create Account'}" wrapping="true"
+									level="H1"/>
+								<HBox alignItems="Center" class="sapUiSmallMarginTopBottom">
+									<Image src="/webapp/img/facebook.svg" width="1.5rem" height="1.5rem" class="sapUiSmallMarginEnd"/>
+									<Image src="/webapp/img/google.svg" width="1.5rem" height="1.5rem" class="sapUiSmallMarginEnd"/>
+									<Image src="/webapp/img/linkedin.svg" width="1.5rem" height="1.5rem"/>
+								</HBox>
+								<Text text="{= ${viewModel>/procType} === 'SignIn' ? 'or use your email to SignIn' : 'or use your email to SignUp'}"
+									class="sapUiSmallMarginBottom txtClassSign"/>
+								<Input value="" name="Name" placeholder="Name" width="18rem" visible="{= ${viewModel>/procType} === 'SignIn' ? false : true}"/>
+								<Input value="" name="Email" placeholder="Email" width="18rem"/>
+								<Input value="" name="Password" placeholder="Password" width="18rem" type="Password"/>
+								<Button text="Forgot password?" visible="{= ${viewModel>/procType} === 'SignIn' ? true : false}" type="Transparent" class="frgtBtnCls sapUiSizeCompact"/>
+								<Button text="{= ${viewModel>/procType} === 'SignIn' ? 'Login' : 'Sign Up'}" width="18rem" type="Transparent" class="logSignBtnCls" press="onProcessLogin"/>
+							</VBox>
+						</HBox>
+					</FlexBox>
+				</content>
+			</Page>
